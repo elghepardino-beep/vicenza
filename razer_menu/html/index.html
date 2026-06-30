@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.css">
+</head>
+<body>
+    <div id="app" class="hidden">
+        <!-- ═══════ MENU PRINCIPALE ═══════ -->
+        <div id="main-menu" class="container">
+            <div class="header">
+                <div class="brand">
+                    <div class="logo-dot"></div>
+                    <div>
+                        <h1 id="server-name">RAZER ROLEPLAY</h1>
+                        <p class="subtitle">Menu Personale</p>
+                    </div>
+                </div>
+                <button class="close-btn" onclick="closeMenu()">
+                    <i class="icon-x"></i>
+                </button>
+            </div>
+
+            <div class="grid" id="categories-grid"></div>
+
+            <div class="footer">
+                <span>Premi <kbd>F5</kbd> o <kbd>ESC</kbd> per chiudere</span>
+                <span id="player-id-display"></span>
+            </div>
+        </div>
+
+        <!-- ═══════ PANNELLO DETTAGLI ═══════ -->
+        <div id="detail-panel" class="container hidden">
+            <div class="header">
+                <button class="back-btn" onclick="backToMain()">
+                    <i class="icon-arrow-left"></i> Indietro
+                </button>
+                <h2 id="detail-title"></h2>
+                <button class="close-btn" onclick="closeMenu()"><i class="icon-x"></i></button>
+            </div>
+            <div id="detail-content"></div>
+        </div>
+
+        <!-- ═══════ NUI RADIO FULLSCREEN ═══════ -->
+        <div id="radio-fullscreen" class="fullscreen hidden">
+            <div class="radio-container">
+                <div class="radio-header">
+                    <h1>📻 Configurazione Radio</h1>
+                    <button class="close-btn" onclick="closeRadio()"><i class="icon-x"></i></button>
+                </div>
+                <div class="radio-grid">
+                    <div class="radio-section">
+                        <h3>Animazioni</h3>
+                        <div id="radio-anims" class="chip-grid"></div>
+                    </div>
+                    <div class="radio-section">
+                        <h3>Pacchetti Audio</h3>
+                        <div id="radio-sounds" class="chip-grid"></div>
+                    </div>
+                    <div class="radio-section">
+                        <h3>Impostazioni Principali</h3>
+                        <div class="setting-row">
+                            <span>Prop Radio</span>
+                            <label class="switch">
+                                <input type="checkbox" id="radio-prop" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="setting-row">
+                            <span>Velocità Radio: <strong id="speed-value">1.0</strong></span>
+                            <input type="range" id="radio-speed" min="0.5" max="2.0" step="0.1" value="1.0">
+                        </div>
+                        <div class="setting-row soon">
+                            <span>Soon...</span>
+                            <span class="badge">In sviluppo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="radio-footer">
+                    <button class="btn-primary" onclick="saveRadio()">💾 Salva Impostazioni</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <audio id="preview-audio"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
