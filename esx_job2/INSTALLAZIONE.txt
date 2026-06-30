@@ -1,0 +1,2 @@
+Importa il SQL in sql/job2.sql nel tuo database.
+Inserisci la cartella esx_job2 in resources/.
