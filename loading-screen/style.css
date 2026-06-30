@@ -1,0 +1,452 @@
+@font-face {
+    font-family: 'falenamediumitalic';
+    src: url(fonts/FALENA-MEDIUMITALIC.OTF);
+}
+/*https://discord.gg/mRJFK5sTyr  & https://discord.gg/1909leaks*/
+.all {
+    user-select: none;
+}
+.black {
+    position: absolute;
+    background-color: rgb(10, 10, 10);
+    width: 100%;
+    height: 100%;
+    top: 0vw;
+    left: 0vw;
+}
+.logo {
+    position: absolute;
+    left: 24vw;
+    top: 11.5vw;
+    height: 27vw;
+    transform: skewY(-2.4deg);
+
+}
+h2 {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-family: 'falenamediumitalic';
+    font-size: 1vw;
+    left: 44.5vw;
+    bottom: 21vw;
+    transform: skewY(-2.4deg);
+    font-weight: 200;
+}
+h1 {
+    font-family: 'falenamediumitalic';
+    position: absolute;
+    color: white;
+    right: 3.15vw;
+    bottom: 5.4vw;
+    font-size: 0.9vw;
+    font-weight: 200;
+    opacity: 0;
+    animation: h1anim 8s infinite;
+    animation-delay: 4s;
+}
+@keyframes h1anim {
+    0% {
+        opacity: 0;
+    }
+    35% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.dark {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.562);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+/*screenshots*/
+.sscont img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.screen1 {
+    opacity: 0;
+    animation-name: ss1anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.screen2 {
+    opacity: 0;
+    animation-name: ss2anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.screen3 {
+    opacity: 0;
+    animation-name: ss3anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.screen4 {
+    opacity: 0;
+    animation-name: ss4anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.screen5 {
+    opacity: 0;
+    animation-name: ss5anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.screen6 {
+    opacity: 0;
+    animation-name: ss6anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+/*char*/
+.chcont img {
+    position: absolute;
+    width: auto;
+    left: 1vw;
+    height: 48.4vw;
+    bottom: 0vw;
+}
+.ch1 {
+    opacity: 0;
+    animation-name: ch1anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+@keyframes ss1anim {
+    0% {
+        opacity: 0;
+    }
+    2% { 
+        opacity: 1;
+    }
+    12% {
+        opacity: 1;
+    }
+    14% {
+        opacity: 0;
+    }
+}
+@keyframes ch1anim {
+    0% {
+        opacity: 0;
+        left: -5vw;
+    }
+    4% {
+        opacity: 1;
+        left: 0vw;
+    }
+    11% {
+        opacity: 1;
+        left: 0vw;
+    }
+    13% {
+        opacity: 0;
+        left: -5vw;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ss2anim {
+    0% {
+        opacity: 0;
+    }
+    13% {
+        opacity:0;
+    }
+    15% {
+        opacity: 1;
+    }
+    26% {
+        opacity: 1;
+    }
+    27% {
+        opacity: 0;
+    }
+
+}
+@keyframes ch2anim {
+    15% {
+        opacity: 0;
+        left: -5vw;
+    }
+    17% {
+        opacity: 1;
+        left: 0vw;
+    }
+    24% {
+        opacity: 1;
+        left: 0vw;
+    }
+    26% {
+        opacity: 0;
+        left: -5vw;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ss3anim {
+    0% {
+        opacity: 0;
+    }
+    27% {
+        opacity: 0;
+    }
+    28% {
+        opacity: 1;
+    }
+    39% {
+        opacity: 1;
+    }
+    41% {
+        opacity: 0;
+    }
+}
+@keyframes ch3anim {
+    28% {
+        opacity: 0;
+        left: -5vw;
+    }
+    30% {
+        opacity: 1;
+        left: 0vw;
+    }
+    37% {
+        opacity: 1;
+        left: 0vw;
+    }
+    39% {
+        opacity: 0;
+        left: -5vw;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ss4anim {
+    40% {
+        opacity: 0;
+    }
+    41% {
+        opacity: 1;
+    }
+    52% {
+        opacity: 1;
+    }
+    53% {
+        opacity: 0;
+    }
+}
+@keyframes ch4anim {
+    41% {
+        opacity: 0;
+        left: -5vw;
+    }
+    43% {
+        opacity: 1;
+        left: 0vw;
+    }
+    50% {
+        opacity: 1;
+        left: 0vw;
+    }
+    52% {
+        opacity: 0;
+        left: -5vw;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ss5anim {
+    53% {
+        opacity: 0;
+    }
+    54% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    71% {
+        opacity: 0;
+    }
+}
+@keyframes ch5anim {
+    54% {
+        opacity: 0;
+        left: -5vw;
+    }
+    61% {
+        opacity: 1;
+        left: 0vw;
+    }
+    68% {
+        opacity: 1;
+        left: 0vw;
+    }
+    70% {
+        opacity: 0;
+        left: -5vw;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes ss6anim {
+    72% {
+        opacity: 0;
+    }
+    73% {
+        opacity: 1;
+    }
+    94% {
+        opacity: 1;
+    }
+    95% {
+        opacity: 0;
+    }
+}
+@keyframes ch6anim {
+    72% {
+        opacity: 0;
+        left: -5vw;
+    }
+    74% {
+        opacity: 1;
+        left: 0vw;
+    }
+    81% {
+        opacity: 1;
+        left: 0vw;
+    }
+    83% {
+        opacity: 0;
+        left: -5vw;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+.ch2 {
+    opacity: 0;
+    animation-name: ch2anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.ch3 {
+    opacity: 0;
+    animation-name: ch3anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.ch4 {
+    opacity: 0;
+    animation-name: ch4anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.ch5 {
+    opacity: 0;
+    animation-name: ch5anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+.ch6 {
+    opacity: 0;
+    animation-name: ch6anim;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    animation-direction: normal;
+}
+/*balken*/
+.balkengray {
+    position: absolute;
+    width: 19vw;
+    height: 0.7vw;
+    bottom: 5vw;
+    right: 3vw;
+    background-color: rgba(128, 128, 128, 0.658);
+}
+.balkenorange {
+    position: absolute;
+    width: 0vw;
+    height: 0.7vw;
+    bottom: 5vw;
+    right: 3vw;
+    justify-content: left;
+    background-color: rgb(127, 15, 255);
+    animation: balkenanim 17s linear infinite;
+    box-shadow: rgba(255, 255, 255, 0) 0vw 0vw 0vw;
+}
+@keyframes balkenanim {
+    0% {
+        opacity: 0;
+        width: 0vw;
+    }
+    2% {
+        box-shadow: rgba(175, 121, 255, 0) 0vw 0vw 1.3vw;
+    }
+    10% {
+        box-shadow: rgb(149, 79, 255) 0vw 0vw 1.3vw;
+    }
+    15% {
+        opacity: 1;
+    }
+    25% {
+        box-shadow: rgba(175, 121, 255, 0) 0vw 0vw 1.3vw;
+    }
+    58% {
+        box-shadow: rgba(175, 121, 255, 0) 0vw 0vw 1.3vw;
+    }
+    59% {
+        box-shadow: rgb(160, 96, 255) 0vw 0vw 1.3vw;
+    }
+    75% {
+        box-shadow: rgba(175, 121, 255, 0) 0vw 0vw 1.3vw;
+    }
+    85% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        width: 18vw;   
+    }
+}
+/*https://discord.gg/mRJFK5sTyr  & https://discord.gg/1909leaks*/
