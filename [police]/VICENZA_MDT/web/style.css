@@ -1,0 +1,356 @@
+:root {
+    --bg: #07111f;
+    --panel: rgba(13, 25, 43, 0.82);
+    --panel2: rgba(18, 35, 59, 0.72);
+    --text: #eaf2ff;
+    --muted: #8ea4c4;
+    --accent: #36d3ff;
+    --accent2: #7c5cff;
+    --danger: #ff4f6d;
+    --ok: #48f5a4;
+    --warning: #ffd166;
+    --border: rgba(255, 255, 255, 0.09);
+    --shadow: 0 20px 70px rgba(0, 0, 0, 0.45);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Inter, Segoe UI, Arial, sans-serif;
+    color: var(--text);
+    background: transparent;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#app {
+    position: absolute;
+    inset: 4vh 4vw;
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    background:
+        radial-gradient(circle at top left, rgba(54, 211, 255, 0.16), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(124, 92, 255, 0.16), transparent 35%),
+        linear-gradient(135deg, rgba(7, 17, 31, 0.97), rgba(4, 8, 18, 0.97));
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    backdrop-filter: blur(18px);
+}
+
+.sidebar {
+    padding: 24px;
+    border-right: 1px solid var(--border);
+    background: rgba(5, 12, 24, 0.58);
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #00111f;
+    font-size: 28px;
+    font-weight: 900;
+    box-shadow: 0 10px 30px rgba(54, 211, 255, 0.2);
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.brand span,
+.officer-card span,
+.topbar p,
+.stat span,
+small {
+    color: var(--muted);
+}
+
+nav {
+    display: grid;
+    gap: 8px;
+}
+
+.nav,
+button {
+    border: 0;
+    color: var(--text);
+    border-radius: 14px;
+    padding: 12px 14px;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.045);
+    transition: 0.18s ease;
+    text-align: left;
+    font-weight: 700;
+}
+
+.nav:hover,
+button:hover {
+    transform: translateY(-1px);
+    background: rgba(54, 211, 255, 0.12);
+}
+
+.nav.active {
+    background: linear-gradient(135deg, rgba(54, 211, 255, 0.22), rgba(124, 92, 255, 0.18));
+    border: 1px solid rgba(54, 211, 255, 0.22);
+}
+
+.officer-card {
+    margin-top: auto;
+    padding: 16px;
+    border-radius: 18px;
+    background: var(--panel2);
+    border: 1px solid var(--border);
+}
+
+.officer-card strong {
+    display: block;
+    margin: 6px 0;
+}
+
+.close-btn {
+    text-align: center;
+    background: rgba(255, 79, 109, 0.12);
+    border: 1px solid rgba(255, 79, 109, 0.24);
+}
+
+.main {
+    padding: 26px;
+    overflow: auto;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 22px;
+}
+
+.topbar h2 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.topbar p {
+    margin: 6px 0 0;
+}
+
+.clock {
+    padding: 12px 18px;
+    border: 1px solid var(--border);
+    background: var(--panel2);
+    border-radius: 16px;
+    font-weight: 800;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(160px, 1fr));
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.stat {
+    padding: 20px;
+    border-radius: 20px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+}
+
+.stat strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 34px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 18px;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    padding: 18px;
+    margin-bottom: 18px;
+}
+
+.panel-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.panel-head h3 {
+    margin: 0;
+}
+
+.search-row {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    gap: 10px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.055);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 12px 13px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: rgba(54, 211, 255, 0.45);
+    box-shadow: 0 0 0 3px rgba(54, 211, 255, 0.08);
+}
+
+.list {
+    display: grid;
+    gap: 10px;
+}
+
+.item {
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.045);
+    border: 1px solid var(--border);
+}
+
+.item-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.item h4 {
+    margin: 0 0 6px;
+}
+
+.item p {
+    color: var(--muted);
+    margin: 0;
+    line-height: 1.45;
+}
+
+.badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.badge {
+    padding: 4px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    background: rgba(54, 211, 255, 0.12);
+    color: var(--accent);
+}
+
+.badge.high,
+.badge.critical {
+    background: rgba(255, 79, 109, 0.14);
+    color: var(--danger);
+}
+
+.badge.normal {
+    background: rgba(255, 209, 102, 0.14);
+    color: var(--warning);
+}
+
+.badge.low {
+    background: rgba(72, 245, 164, 0.13);
+    color: var(--ok);
+}
+
+.detail img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+
+.actions button {
+    text-align: center;
+    padding: 9px 11px;
+}
+
+.toast {
+    position: absolute;
+    right: 5vw;
+    bottom: 5vh;
+    padding: 14px 18px;
+    border-radius: 16px;
+    background: rgba(8, 16, 30, 0.92);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
+
+@media (max-width: 1200px) {
+    #app {
+        inset: 2vh 2vw;
+        grid-template-columns: 245px 1fr;
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+}

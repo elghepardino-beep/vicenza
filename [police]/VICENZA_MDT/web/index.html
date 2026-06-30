@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VICENZA MDT</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="app" class="hidden">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="logo">V</div>
+                <div>
+                    <h1>VICENZA</h1>
+                    <span>Mobile Data Terminal</span>
+                </div>
+            </div>
+
+            <nav>
+                <button class="nav active" data-page="dashboard">Dashboard</button>
+                <button class="nav" data-page="citizens">Cittadini</button>
+                <button class="nav" data-page="vehicles">Veicoli</button>
+                <button class="nav" data-page="incidents">Incidenti</button>
+                <button class="nav" data-page="warrants">Mandati</button>
+                <button class="nav" data-page="bolos">BOLO</button>
+                <button class="nav" data-page="charges">Codice Penale</button>
+                <button class="nav" data-page="announcements">Annunci</button>
+            </nav>
+
+            <div class="officer-card">
+                <small>Operatore</small>
+                <strong id="officerName">---</strong>
+                <span id="officerJob">---</span>
+            </div>
+
+            <button id="closeBtn" class="close-btn">Chiudi MDT</button>
+        </aside>
+
+        <main class="main">
+            <header class="topbar">
+                <div>
+                    <h2 id="pageTitle">Dashboard</h2>
+                    <p>Centro operativo digitale — Vicenza Law Enforcement</p>
+                </div>
+
+                <div class="clock" id="clock">--:--</div>
+            </header>
+
+            <section class="page active" id="dashboard">
+                <div class="stats">
+                    <div class="stat">
+                        <span>Mandati attivi</span>
+                        <strong id="statWarrants">0</strong>
+                    </div>
+                    <div class="stat">
+                        <span>BOLO attivi</span>
+                        <strong id="statBolos">0</strong>
+                    </div>
+                    <div class="stat">
+                        <span>Incidenti aperti</span>
+                        <strong id="statIncidents">0</strong>
+                    </div>
+                    <div class="stat">
+                        <span>Reati registrati</span>
+                        <strong id="statCharges">0</strong>
+                    </div>
+                </div>
+
+                <div class="grid-2">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Incidenti recenti</h3>
+                        </div>
+                        <div id="recentIncidents" class="list"></div>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Avvisi operativi</h3>
+                        </div>
+                        <div id="dashboardAnnouncements" class="list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="citizens">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3>Ricerca cittadino</h3>
+                    </div>
+
+                    <div class="search-row">
+                        <input id="citizenSearch" placeholder="Nome, cognome o identifier..." />
+                        <button id="searchCitizenBtn">Cerca</button>
+                    </div>
+
+                    <div id="citizenResults" class="list"></div>
+                </div>
+
+                <div class="panel detail hidden" id="citizenDetail"></div>
+            </section>
+
+            <section class="page" id="vehicles">
+                <div class="panel">
+                    <div class="panel-head">
+                        <h3>Ricerca veicolo</h3>
+                    </div>
+
+                    <div class="search-row">
+                        <input id="vehicleSearch" placeholder="Targa o modello..." />
+                        <button id="searchVehicleBtn">Cerca</button>
+                    </div>
+
+                    <div id="vehicleResults" class="list"></div>
+                </div>
+
+                <div class="panel detail hidden" id="vehicleDetail"></div>
+            </section>
+
+            <section class="page" id="incidents">
+                <div class="grid-2">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Nuovo incidente</h3>
+                        </div>
+
+                        <input id="incTitle" placeholder="Titolo" />
+                        <select id="incType">
+                            <option value="criminal">Penale</option>
+                            <option value="civil">Civile</option>
+                            <option value="investigation">Investigativo</option>
+                            <option value="training">Training</option>
+                        </select>
+                        <select id="incPriority">
+                            <option value="low">Bassa</option>
+                            <option value="normal" selected>Normale</option>
+                            <option value="high">Alta</option>
+                            <option value="critical">Critica</option>
+                        </select>
+                        <input id="incLocation" placeholder="Luogo" />
+                        <textarea id="incSummary" placeholder="Descrizione dettagliata"></textarea>
+                        <textarea id="incInvolved" placeholder="Coinvolti JSON opzionale, es: [{&quot;identifier&quot;:&quot;...&quot;,&quot;name&quot;:&quot;Mario Rossi&quot;}]"></textarea>
+                        <button id="createIncidentBtn">Crea incidente</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Archivio incidenti</h3>
+                            <button id="reloadIncidentsBtn">Aggiorna</button>
+                        </div>
+                        <div id="incidentList" class="list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="warrants">
+                <div class="grid-2">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Nuovo mandato</h3>
+                        </div>
+
+                        <select id="warTargetType">
+                            <option value="person">Persona</option>
+                            <option value="vehicle">Veicolo</option>
+                        </select>
+                        <input id="warTargetIdentifier" placeholder="Identifier persona" />
+                        <input id="warTargetLabel" placeholder="Nome target" />
+                        <input id="warPlate" placeholder="Targa veicolo" />
+                        <input id="warTitle" placeholder="Titolo mandato" />
+                        <textarea id="warReason" placeholder="Motivazione"></textarea>
+                        <input id="warExpires" placeholder="Scadenza YYYY-MM-DD HH:MM:SS" />
+                        <button id="createWarrantBtn">Crea mandato</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Mandati</h3>
+                            <button id="reloadWarrantsBtn">Aggiorna</button>
+                        </div>
+                        <div id="warrantList" class="list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="bolos">
+                <div class="grid-2">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Nuovo BOLO</h3>
+                        </div>
+
+                        <select id="boloType">
+                            <option value="person">Persona</option>
+                            <option value="vehicle">Veicolo</option>
+                        </select>
+                        <input id="boloTitle" placeholder="Titolo BOLO" />
+                        <textarea id="boloDescription" placeholder="Descrizione"></textarea>
+                        <input id="boloPersonIdentifier" placeholder="Identifier persona" />
+                        <input id="boloPersonLabel" placeholder="Nome persona" />
+                        <input id="boloPlate" placeholder="Targa" />
+                        <input id="boloImage" placeholder="URL immagine" />
+                        <select id="boloPriority">
+                            <option value="low">Bassa</option>
+                            <option value="normal" selected>Normale</option>
+                            <option value="high">Alta</option>
+                            <option value="critical">Critica</option>
+                        </select>
+                        <button id="createBoloBtn">Crea BOLO</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>BOLO attivi</h3>
+                            <button id="reloadBolosBtn">Aggiorna</button>
+                        </div>
+                        <div id="boloList" class="list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="charges">
+                <div class="grid-2">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Nuovo / modifica reato</h3>
+                        </div>
+
+                        <input id="chargeCode" placeholder="Codice, es: CP-050" />
+                        <input id="chargeCategory" placeholder="Categoria" />
+                        <input id="chargeTitle" placeholder="Titolo" />
+                        <textarea id="chargeDescription" placeholder="Descrizione"></textarea>
+                        <input id="chargeFine" type="number" placeholder="Multa" />
+                        <input id="chargeJail" type="number" placeholder="Carcere minuti" />
+                        <button id="saveChargeBtn">Salva reato</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Codice penale</h3>
+                            <button id="reloadChargesBtn">Aggiorna</button>
+                        </div>
+                        <div id="chargeList" class="list"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page" id="announcements">
+                <div class="grid-2">
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Nuovo annuncio operativo</h3>
+                        </div>
+
+                        <input id="annTitle" placeholder="Titolo" />
+                        <textarea id="annMessage" placeholder="Messaggio"></textarea>
+                        <select id="annPriority">
+                            <option value="low">Bassa</option>
+                            <option value="normal" selected>Normale</option>
+                            <option value="high">Alta</option>
+                            <option value="critical">Critica</option>
+                        </select>
+                        <button id="createAnnouncementBtn">Pubblica</button>
+                    </div>
+
+                    <div class="panel">
+                        <div class="panel-head">
+                            <h3>Annunci dashboard</h3>
+                        </div>
+                        <div id="announcementList" class="list"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
